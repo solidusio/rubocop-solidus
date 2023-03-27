@@ -1,1 +1,4 @@
-# Write it!
+Solidus/ClassEvalDecorator:
+  Description: 'Checks if Class.class_eval is being used in the code'
+  Enabled: true
+  VersionAdded: '0.1.1'
