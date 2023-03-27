@@ -2,3 +2,8 @@ Solidus/ClassEvalDecorator:
   Description: 'Checks if Class.class_eval is being used in the code'
   Enabled: true
   VersionAdded: '0.1.1'
+
+Solidus/SpreeTDecprecated:
+  Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
+  Enabled: true
+  VersionAdded: '0.1.2'
