@@ -3,6 +3,11 @@ Solidus/ClassEvalDecorator:
   Enabled: true
   VersionAdded: '0.1.1'
 
+Solidus/SpreeGatewayBogusDeprecated:
+  Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeTDecprecated:
   Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
   Enabled: true
