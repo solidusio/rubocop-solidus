@@ -3,6 +3,11 @@ Solidus/ClassEvalDecorator:
   Enabled: true
   VersionAdded: '0.1.1'
 
+Solidus/ReimbursementHookDeprecated:
+  Description: 'Checks if reimbursement_success_hooks and reimbursement_failed_hooks is being used'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeGatewayBogusDeprecated:
   Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
   Enabled: true
