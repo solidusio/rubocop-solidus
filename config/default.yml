@@ -13,6 +13,11 @@ Solidus/SpreeGatewayBogusDeprecated:
   Enabled: true
   VersionAdded: '<<next>>'
 
+Solidus/SpreeRefundCallPerform:
+  Description: 'Checks if Spree::Refund.create is being used and require calling .perform!'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeTDecprecated:
   Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
   Enabled: true
