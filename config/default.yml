@@ -6,17 +6,17 @@ Solidus/ClassEvalDecorator:
 Solidus/ReimbursementHookDeprecated:
   Description: 'Checks if reimbursement_success_hooks and reimbursement_failed_hooks is being used'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.3'
 
 Solidus/SpreeGatewayBogusDeprecated:
   Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.3'
 
 Solidus/SpreeRefundCallPerform:
   Description: 'Checks if Spree::Refund.create is being used and require calling .perform!'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.3'
 
 Solidus/SpreeTDecprecated:
   Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
@@ -26,4 +26,4 @@ Solidus/SpreeTDecprecated:
 Solidus/TaxCategoryDeprecated:
   Description: 'Checks if .tax_category=Instance is being used and suggest to replace it with .tax_categories=<Array of Instances>'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.3'
