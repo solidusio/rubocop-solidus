@@ -28,6 +28,11 @@ Solidus/SpreeDiscountedAmountDeprecated:
   Enabled: true
   VersionAdded: '<<next>>'
 
+Solidus/SpreeDefaultCreditCardDeprecated:
+  Description: 'Checks if user.default_credit_card is used and suggest using user.wallet.default_wallet_payment_source'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeGatewayBogusDeprecated:
   Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
   Enabled: true
