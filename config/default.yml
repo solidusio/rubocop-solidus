@@ -8,6 +8,21 @@ Solidus/ReimbursementHookDeprecated:
   Enabled: true
   VersionAdded: '0.1.3'
 
+Solidus/SpreeCalculatorFreeShippingDeprecated:
+  Description: 'Checks if Spree::Calculator::FreeShipping is being used and add deprecation message'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
+Solidus/SpreeCalculatorPercentPerItemDeprecated:
+  Description: 'Checks if Spree::Calculator::PercentPerItem is being used and add deprecation message'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
+Solidus/SpreeCalculatorPriceSackDeprecated:
+  Description: 'Checks if Spree::Calculator::PriceSack is being used and add deprecation message'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeGatewayBogusDeprecated:
   Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
   Enabled: true
