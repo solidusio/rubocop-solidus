@@ -23,6 +23,11 @@ Solidus/SpreeCalculatorPriceSackDeprecated:
   Enabled: true
   VersionAdded: '<<next>>'
 
+Solidus/SpreeDiscountedAmountDeprecated:
+  Description: 'Checks if discounted_amount is used and suggest using total_before_tax.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeGatewayBogusDeprecated:
   Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
   Enabled: true
