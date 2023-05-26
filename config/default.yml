@@ -38,6 +38,11 @@ Solidus/SpreeGatewayBogusDeprecated:
   Enabled: true
   VersionAdded: '0.1.3'
 
+Solidus/SpreeIconDeprecated:
+  Description: 'Checks if icon helper is being used and suggest `solidus_icon`'
+  Enabled: true
+  VersionAdded: '<<next>>'
+
 Solidus/SpreeRefundCallPerform:
   Description: 'Checks if Spree::Refund.create is being used and require calling .perform!'
   Enabled: true
