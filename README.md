@@ -32,7 +32,7 @@ After this simply use the `rubocop` command to start linting.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/piyushswain/rubocop-solidus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nebulab/rubocop-solidus.
 
 ## License
 
