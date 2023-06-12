@@ -8,7 +8,7 @@ A RuboCop extension focused on enforcing Solidus best practices and coding conve
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop-solidus', require: false
+gem 'rubocop-solidus', github: 'nebulab/rubocop-solidus', require: false
 ```
 
 And then execute:
@@ -32,7 +32,7 @@ After this simply use the `rubocop` command to start linting.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/piyushswain/rubocop-solidus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nebulab/rubocop-solidus.
 
 ## License
 
