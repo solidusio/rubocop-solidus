@@ -23,11 +23,6 @@ Solidus/SpreeCalculatorPriceSackDeprecated:
   Enabled: true
   VersionAdded: '<<next>>'
 
-Solidus/SpreeDiscountedAmountDeprecated:
-  Description: 'Checks if discounted_amount is used and suggest using total_before_tax.'
-  Enabled: true
-  VersionAdded: '<<next>>'
-
 Solidus/SpreeDefaultCreditCardDeprecated:
   Description: 'Checks if user.default_credit_card is used and suggest using user.wallet.default_wallet_payment_source'
   Enabled: true
