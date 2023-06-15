@@ -52,8 +52,3 @@ Solidus/SpreeTDecprecated:
   Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
   Enabled: true
   VersionAdded: '0.1.2'
-
-Solidus/TaxCategoryDeprecated:
-  Description: 'Checks if .tax_category=Instance is being used and suggest to replace it with .tax_categories=<Array of Instances>'
-  Enabled: true
-  VersionAdded: '0.1.3'
