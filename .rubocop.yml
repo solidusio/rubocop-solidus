@@ -1,3 +1,6 @@
+AllCops:
+  TargetSolidusVersion: 2.11
+
 Naming/FileName:
  Exclude:
    - lib/rubocop-solidus.rb

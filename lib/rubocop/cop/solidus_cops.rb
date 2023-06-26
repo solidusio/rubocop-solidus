@@ -11,3 +11,4 @@ require_relative 'solidus/spree_icon_deprecated'
 require_relative 'solidus/spree_refund_call_perform'
 require_relative 'solidus/spree_t_decprecated'
 
+require_relative 'mixin/target_solidus_version'

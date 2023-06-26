@@ -3,28 +3,8 @@
 module RuboCop
   module Cop
     module Solidus
-      # TODO: Write cop description and example of bad / good code. For every
-      # `SupportedStyle` and unique configuration, there needs to be examples.
-      # Examples must have valid Ruby syntax. Do not use upticks.
-      #
-      #
-      # @example EnforcedStyle: SpreeClass
-      #   # Description of the `SpreeClass` style.
-      #
-      #   # bad
-      #   SpreeClass.class_eval do
-      #   .
-      #   .
-      #   end
-      #
-      #
-      #   # good
-      #   module SpreeClassDecorator
-      #   .
-      #   .
-      #   end
-      #
       class ClassEvalDecorator < Base
+        extend TargetRailsVersion
         MSG = "Do not use `class_eval` flag. Use a decorator module instead. Check this link for an example https://guides.solidus.io/cookbook/redefining-checkout-steps"
 
         # TODO: Don't call `on_send` unless the method name is in this list
@@ -38,6 +18,7 @@ module RuboCop
 
         def on_send(node)
           return unless on_class_eval?(node)
+          return unless minimum_supported_solidus_version?(3.0)
 
           add_offense(node)
         end
