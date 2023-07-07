@@ -54,6 +54,7 @@ module RuboCop
           end
         end
 
+        # rubocop:disable Metrics/MethodLength
         def corrected_statement(node)
           arguments = node.arguments
 
@@ -72,6 +73,7 @@ module RuboCop
           new_statement += ')'
           new_statement
         end
+        # rubocop:enable Metrics/MethodLength
 
         def scope_missing?(arguments)
           arguments.each do |argument|
@@ -80,6 +82,7 @@ module RuboCop
           true
         end
 
+        # rubocop:disable Metrics/MethodLength
         def add_spree_scope(argument)
           modified_argument = ''
 
@@ -97,6 +100,7 @@ module RuboCop
 
           modified_argument
         end
+        # rubocop:enable Metrics/MethodLength
       end
     end
   end
