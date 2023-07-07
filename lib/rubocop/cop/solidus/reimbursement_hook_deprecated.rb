@@ -3,6 +3,8 @@
 module RuboCop
   module Cop
     module Solidus
+      # This cop finds reimbursement_success_hooks and reimbursement_failed_hooks calls and
+      # asks to remove them and subscribe to reimbursement_reimbursed event instead.
       class ReimbursementHookDeprecated < Base
         include TargetSolidusVersion
         minimum_solidus_version 2.11
