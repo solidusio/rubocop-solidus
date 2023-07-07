@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::ClassEvalDecorator, :config do
-  let(:config) { RuboCop::Config.new("Solidus/ClassEvalDecorator" => { "Enabled" => true }) }
+  let(:config) { RuboCop::Config.new('Solidus/ClassEvalDecorator' => { 'Enabled' => true }) }
 
   it 'registers an offense when using `#bad_method`' do
     expect_offense(<<~RUBY)

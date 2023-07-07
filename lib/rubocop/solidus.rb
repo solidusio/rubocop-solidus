@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "solidus/version"
+require_relative 'solidus/version'
 
 module RuboCop
   module Solidus

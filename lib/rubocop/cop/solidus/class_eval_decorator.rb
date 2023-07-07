@@ -25,7 +25,7 @@ module RuboCop
       #   end
       #
       class ClassEvalDecorator < Base
-        MSG = "Do not use `class_eval` flag. Use a decorator module instead. Check this link for an example https://guides.solidus.io/cookbook/redefining-checkout-steps"
+        MSG = 'Do not use `class_eval` flag. Use a decorator module instead. Check this link for an example https://guides.solidus.io/cookbook/redefining-checkout-steps'
 
         # TODO: Don't call `on_send` unless the method name is in this list
         # If you don't need `on_send` in the cop you created, remove it.
