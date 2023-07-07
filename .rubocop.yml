@@ -4,3 +4,10 @@ AllCops:
 Naming/FileName:
  Exclude:
    - lib/rubocop-solidus.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - '*.gemspec'
