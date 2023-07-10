@@ -11,59 +11,59 @@ AllCops:
 Solidus/ClassEvalDecorator:
   Description: 'Checks if Class.class_eval is being used in the code'
   Enabled: true
-  VersionAdded: '0.1.1'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/21'
 
 Solidus/ReimbursementHookDeprecated:
   Description: 'Checks if reimbursement_success_hooks and reimbursement_failed_hooks is being used'
   Enabled: true
-  VersionAdded: '0.1.3'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/27'
 
 Solidus/SpreeCalculatorFreeShippingDeprecated:
   Description: 'Checks if Spree::Calculator::FreeShipping is being used and add deprecation message'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/29'
 
 Solidus/SpreeCalculatorPercentPerItemDeprecated:
   Description: 'Checks if Spree::Calculator::PercentPerItem is being used and add deprecation message'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/29'
 
 Solidus/SpreeCalculatorPriceSackDeprecated:
   Description: 'Checks if Spree::Calculator::PriceSack is being used and add deprecation message'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/29'
 
 Solidus/SpreeDefaultCreditCardDeprecated:
   Description: 'Checks if user.default_credit_card is used and suggest using user.wallet.default_wallet_payment_source'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/33'
 
 Solidus/SpreeGatewayBogusDeprecated:
   Description: 'Checks if SpreeGatewayBogus is being used and replaces it with Spree::PaymentMethod::BogusCreditCard'
   Enabled: true
-  VersionAdded: '0.1.3'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/26'
 
 Solidus/SpreeIconDeprecated:
   Description: 'Checks if icon helper is being used and suggest `solidus_icon`'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/32'
 
 Solidus/SpreeRefundCallPerform:
   Description: 'Checks if Spree::Refund.create is being used and require calling .perform!'
   Enabled: true
-  VersionAdded: '0.1.3'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/28'
 
 Solidus/SpreeTDecprecated:
   Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
   Enabled: true
-  VersionAdded: '0.1.2'
+  VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/22'
