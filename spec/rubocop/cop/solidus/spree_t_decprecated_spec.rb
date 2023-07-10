@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::SpreeTDecprecated, :config do
-  let(:config) { RuboCop::Config.new('Solidus/SpreeTDecprecated' => { 'Enabled' => true }) }
-
   describe 'first argument is a symbol' do
     it 'registers an offense when using `#bad_method`' do
       expect_offense(<<~RUBY)

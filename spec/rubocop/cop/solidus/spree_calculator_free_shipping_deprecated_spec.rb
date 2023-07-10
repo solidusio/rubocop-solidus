@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::SpreeCalculatorFreeShippingDeprecated, :config do
-  let(:config) { RuboCop::Config.new('Solidus/SpreeCalculatorFreeShippingDeprecated' => { 'Enabled' => true }) }
-
   context 'when using `Spree::Calculator::FreeShipping` class' do
     it 'registers an offense when using `#new`' do
       expect_offense(<<~RUBY)

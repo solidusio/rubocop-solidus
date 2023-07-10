@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::SpreeIconDeprecated, :config do
-  let(:config) { RuboCop::Config.new('Solidus/SpreeIconDeprecated' => { 'Enabled' => true }) }
-
   it 'registers an offense when using `#icon("example")`' do
     expect_offense(<<~RUBY)
       helper.icon('example')

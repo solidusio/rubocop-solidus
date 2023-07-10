@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::ReimbursementHookDeprecated, :config do
-  let(:config) { RuboCop::Config.new('Solidus/ReimbursementHookDeprecated' => { 'Enabled' => true }) }
-
   it 'registers an offense when using `#reimbursement_success_hooks.any?`' do
     expect_offense(<<~RUBY)
       reimbursement_success_hooks.any?
