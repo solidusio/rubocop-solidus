@@ -35,6 +35,8 @@ module RuboCop
         super(...)
       end
 
+      private
+
       def affected_solidus_version?
         self.class.targeted_solidus_version?(target_solidus_version)
       end

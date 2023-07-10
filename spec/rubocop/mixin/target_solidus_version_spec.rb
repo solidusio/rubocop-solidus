@@ -11,132 +11,129 @@ RSpec.describe RuboCop::Cop::TargetSolidusVersion do
   end
 
   describe '#add_offense' do
-    before do
-      allow_any_instance_of(RuboCop::Cop::Base).to receive(:add_offense).and_return('Super called')
-    end
-
-    context 'when target_solidus_version is greater than minimum_solidus_version' do
+    shared_examples 'affected solidus version' do
       it 'calls the super method' do
-        dummy_cop.class.minimum_solidus_version 2.11
+        expect_any_instance_of(RuboCop::Cop::Base).to receive(:add_offense)
         expect(dummy_cop.add_offense).to eq 'Super called'
       end
     end
 
-    context 'when target_solidus_version is lower than minimum_solidus_version' do
+    shared_examples 'not affected solidus version' do
       it 'does not call the super method' do
-        dummy_cop.class.minimum_solidus_version 3.1
+        expect_any_instance_of(RuboCop::Cop::Base).to_not receive(:add_offense)
         expect(dummy_cop.add_offense).to be_nil
       end
     end
-  end
 
-  describe '#target_solidus_version' do
+    before do
+      allow_any_instance_of(RuboCop::Cop::Base).to receive(:add_offense).and_return('Super called')
+    end
+
     context 'when TargetSolidusVersion is set' do
       let(:hash) { { 'TargetSolidusVersion' => solidus_version } }
 
       before do
         allow(dummy_cop.config).to receive(:for_all_cops).and_return(hash)
+        dummy_cop.class.minimum_solidus_version 2.5
       end
 
-      context 'with patch version' do
-        let(:solidus_version) { '2.11.5' }
-        let(:solidus_version_to_f) { 2.11 }
+      context 'and TargetSolidusVersion is lower than minimum_solidus_version' do
+        let(:solidus_version) { '2.4' }
 
-        it 'truncates the patch part and converts to a float' do
-          expect(dummy_cop.target_solidus_version).to eq solidus_version_to_f
-        end
+        it_behaves_like 'not affected solidus version'
       end
 
-      context 'correctly' do
-        let(:solidus_version) { '2.11' }
-        let(:solidus_version_to_f) { 2.11 }
+      context 'and TargetSolidusVersion is bigger than minimum_solidus_version' do
+        let(:solidus_version) { '2.6' }
 
-        it 'uses TargetSolidusVersion' do
-          expect(dummy_cop.target_solidus_version).to eq solidus_version_to_f
-        end
+        it_behaves_like 'affected solidus version'
       end
     end
 
-    context 'when TargetSolidusVersion is not set', :isolated_environment do
+    context 'when TargetSolidusVersion is not set' do
       context 'and lock files do not exist' do
-        it 'uses the default Solidus version' do
-          default = described_class::DEFAULT_SOLIDUS_VERSION
-          expect(dummy_cop.target_solidus_version).to eq default
+        context 'and default solidus version is lower than minimum_solidus_version' do
+          before do
+            dummy_cop.class.minimum_solidus_version 3.1
+          end
+
+          it_behaves_like 'not affected solidus version'
+        end
+
+        context 'and default solidus version is bigger than minimum_solidus_version' do
+          before do
+            dummy_cop.class.minimum_solidus_version 2.11
+          end
+
+          it_behaves_like 'affected solidus version'
         end
       end
 
-      context 'and Gemfile.lock exists' do
+      context 'and Gemfile.lock exists', :isolated_environment do
         let(:base_path) { dummy_cop.config.base_dir_for_path_parameters }
         let(:lock_file_path) { File.join(base_path, 'Gemfile.lock') }
 
         before do
+          dummy_cop.class.minimum_solidus_version 3.3
+          create_file(lock_file_path, content)
           allow(dummy_cop.config).to receive(:bundler_lock_file_path).and_return(lock_file_path)
         end
 
-        it 'uses the Solidus version in Gemfile.lock' do
-          content =
+        context 'and solidus version is lower than minimum_solidus_version' do
+          let(:content) do
             <<~LOCKFILE
               GEM
                 remote: https://rubygems.org/
                 specs:
-                  solidus (3.1.9)
-                    solidus_api (= 3.1.9)
-                    solidus_backend (= 3.1.9)
-                    solidus_core (= 3.1.9)
-                    solidus_frontend (= 3.1.9)
-                    solidus_sample (= 3.1.9)
-                  solidus_core (3.1.9)
+                  solidus (3.2.8)
+                    solidus_api (= 3.2.8)
+                    solidus_backend (= 3.2.8)
+                    solidus_core (= 3.2.8)
+                    solidus_frontend (= 3.2.8)
+                    solidus_sample (= 3.2.8)
+                  solidus_core (3.2.8)
 
               PLATFORMS
                 ruby
 
               DEPENDENCIES
-                solidus (~> 3.1.0)
+                solidus (~> 3.2.0)
 
               BUNDLED WITH
                 2.3.22
             LOCKFILE
-          create_file(lock_file_path, content)
-          expect(dummy_cop.target_solidus_version).to eq 3.1
+          end
+
+          it_behaves_like 'not affected solidus version'
         end
 
-        it 'uses the default Solidus when Solidus is not in Gemfile.lock' do
-          content =
+        context 'and solidus version is bigger than minimum_solidus_version' do
+          let(:content) do
             <<~LOCKFILE
               GEM
                 remote: https://rubygems.org/
                 specs:
-                  bump (0.5.4)
+                  solidus (3.4.3)
+                    solidus_api (= 3.4.3)
+                    solidus_backend (= 3.4.3)
+                    solidus_core (= 3.4.3)
+                    solidus_frontend (= 3.4.3)
+                    solidus_sample (= 3.4.3)
+                  solidus_core (3.4.3)
 
               PLATFORMS
                 ruby
 
               DEPENDENCIES
-                bump
+                solidus (~> 3.4.0)
 
               BUNDLED WITH
                 2.3.22
             LOCKFILE
-          create_file(lock_file_path, content)
-          default = described_class::DEFAULT_SOLIDUS_VERSION
-          expect(dummy_cop.target_solidus_version).to eq default
+          end
+
+          it_behaves_like 'affected solidus version'
         end
-      end
-    end
-  end
-
-  describe '#affected_solidus_version?' do
-    context 'when target_solidus_version is lower than minimum_solidus_version' do
-      it 'returns false' do
-        dummy_cop.class.minimum_solidus_version 3.1
-        expect(dummy_cop.affected_solidus_version?).to be false
-      end
-    end
-
-    context 'when target_solidus_version is greater than minimum_solidus_version' do
-      it 'returns true' do
-        dummy_cop.class.minimum_solidus_version 2.11
-        expect(dummy_cop.affected_solidus_version?).to be true
       end
     end
   end
