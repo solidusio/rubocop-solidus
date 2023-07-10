@@ -41,20 +41,14 @@ module RuboCop
 
       def target_solidus_version
         @target_solidus_version ||=
-          if config.for_all_cops['TargetSolidusVersion']
-            config.for_all_cops['TargetSolidusVersion'].to_f
-          elsif target_solidus_version_from_bundler_lock_file
-            target_solidus_version_from_bundler_lock_file
-          else
-            DEFAULT_SOLIDUS_VERSION
-          end
+          config.for_all_cops['TargetSolidusVersion']&.to_f || solidus_version_from_lock_file || DEFAULT_SOLIDUS_VERSION
       end
 
-      def target_solidus_version_from_bundler_lock_file
-        @target_solidus_version_from_bundler_lock_file ||= read_solidus_version_from_bundler_lock_file
+      def solidus_version_from_lock_file
+        @solidus_version_from_lock_file ||= read_solidus_version_from_lock_file
       end
 
-      def read_solidus_version_from_bundler_lock_file
+      def read_solidus_version_from_lock_file
         lock_file_path = config.bundler_lock_file_path
         return nil unless lock_file_path
 
