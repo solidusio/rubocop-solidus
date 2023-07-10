@@ -26,6 +26,15 @@ module RuboCop
         end
       end
 
+      # This method overrides the one in RuboCop::Cop::Base.
+      # Since this method is called for every offense, we can use it to check
+      # if the Solidus version is affected and skip the offense if it's not.
+      def add_offense(...)
+        return unless affected_solidus_version?
+
+        super(...)
+      end
+
       def affected_solidus_version?
         self.class.targeted_solidus_version?(target_solidus_version)
       end
@@ -55,15 +64,6 @@ module RuboCop
           result = line.match(/^\s+solidus_core\s+\((\d+\.\d+)/)
           return result.captures.first.to_f if result
         end
-      end
-
-      # This method overrides the one in RuboCop::Cop::Base.
-      # Since this method is called for every offense, we can use it to check
-      # if the Solidus version is affected and skip the offense if it's not.
-      def add_offense(node_or_range, message: nil, severity: nil, &block)
-        return unless affected_solidus_version?
-
-        super
       end
     end
   end

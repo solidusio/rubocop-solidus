@@ -11,23 +11,21 @@ RSpec.describe RuboCop::Cop::TargetSolidusVersion do
   end
 
   describe '#add_offense' do
-    let(:node) { double }
-
     before do
-      allow_any_instance_of(RuboCop::Cop::Base).to receive(:add_offense).with(any_args).and_return('Super called')
+      allow_any_instance_of(RuboCop::Cop::Base).to receive(:add_offense).and_return('Super called')
     end
 
     context 'when target_solidus_version is greater than minimum_solidus_version' do
       it 'calls the super method' do
         dummy_cop.class.minimum_solidus_version 2.11
-        expect(dummy_cop.add_offense(node)).to eq 'Super called'
+        expect(dummy_cop.add_offense).to eq 'Super called'
       end
     end
 
     context 'when target_solidus_version is lower than minimum_solidus_version' do
       it 'does not call the super method' do
         dummy_cop.class.minimum_solidus_version 3.1
-        expect(dummy_cop.add_offense(node)).to be_nil
+        expect(dummy_cop.add_offense).to be_nil
       end
     end
   end
