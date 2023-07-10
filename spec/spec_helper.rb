@@ -3,6 +3,7 @@
 require 'rubocop-solidus'
 require 'rubocop/rspec/support'
 require 'pry'
+require_relative 'support/file_helper'
 
 RSpec.configure do |config|
   config.include RuboCop::RSpec::ExpectOffense

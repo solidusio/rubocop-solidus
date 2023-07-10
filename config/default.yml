@@ -1,3 +1,13 @@
+AllCops:
+  # What version of Solidus is the inspected code using? If a value is specified
+  # for TargetSolidusVersion then it is used. Acceptable values are specified
+  # as a float (i.e. 3.1); the patch version of Solidus should not be included.
+  # If TargetSolidusVersion is not set, RuboCop will parse the Gemfile.lock or
+  # gems.locked file to find the version of Solidus that has been bound to the
+  # application.  If neither of those files exist, RuboCop will use Solidus 3.0
+  # as the default.
+  TargetSolidusVersion: ~
+
 Solidus/ClassEvalDecorator:
   Description: 'Checks if Class.class_eval is being used in the code'
   Enabled: true
