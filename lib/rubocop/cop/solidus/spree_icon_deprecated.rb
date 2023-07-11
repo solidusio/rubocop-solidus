@@ -15,6 +15,8 @@ module RuboCop
       #
       class SpreeIconDeprecated < Base
         extend AutoCorrector
+        include TargetSolidusVersion
+        minimum_solidus_version 2.3
 
         MSG = 'In Solidus 2.3, `icon` helper has been deprecated in favor of `solidus_icon`'
 
