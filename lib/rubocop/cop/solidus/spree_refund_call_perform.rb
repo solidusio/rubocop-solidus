@@ -7,6 +7,9 @@ module RuboCop
       # replaces them with the Spree::Refund.create(your: attributes, perform_after_create: false).perform! call
       #
       class SpreeRefundCallPerform < Base
+        include TargetSolidusVersion
+        minimum_solidus_version 2.11
+
         MSG = 'From Solidus v3.0 onwards, #perform! will need to be explicitly called when creating new refunds. ' \
               'Please, change your code from `Spree::Refund.create(your: attributes)` ' \
               'to `Spree::Refund.create(your: attributes, perform_after_create: false).perform!`'
