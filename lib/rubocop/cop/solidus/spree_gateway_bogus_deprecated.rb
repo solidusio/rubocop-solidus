@@ -28,6 +28,9 @@ module RuboCop
       #
       class SpreeGatewayBogusDeprecated < Base
         extend AutoCorrector
+        include TargetSolidusVersion
+        minimum_solidus_version 2.10
+
         MSG = 'Spree::Gateway::Bogus is deprecated. Please use Spree::PaymentMethod::BogusCreditCard instead.'
 
         # @!method bad_method?(node)
