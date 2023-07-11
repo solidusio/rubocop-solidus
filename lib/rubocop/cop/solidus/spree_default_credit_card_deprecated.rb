@@ -15,6 +15,8 @@ module RuboCop
       #
       class SpreeDefaultCreditCardDeprecated < Base
         extend AutoCorrector
+        include TargetSolidusVersion
+        minimum_solidus_version 2.2
 
         MSG = 'user.default_credit_card is deprecated. Please use user.wallet.default_wallet_payment_source instead.'
 
