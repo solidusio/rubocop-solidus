@@ -33,7 +33,7 @@ module RuboCop
       #   I18n.t('bar', scope: 'spree.admin.city')
       #
       #
-      class SpreeTDecprecated < Base
+      class SpreeTDeprecated < Base
         extend AutoCorrector
         MSG = 'Use I18n.t instead of Spree.t which has been deprecated in future versions.'
 

@@ -62,7 +62,7 @@ Solidus/SpreeRefundCallPerform:
   VersionAdded: '0.1.0'
   Reference: 'https://github.com/nebulab/rubocop-solidus/issues/28'
 
-Solidus/SpreeTDecprecated:
+Solidus/SpreeTDeprecated:
   Description: 'Checks if Spree.t is being used and replaces it with I18n.t.'
   Enabled: true
   VersionAdded: '0.1.0'
