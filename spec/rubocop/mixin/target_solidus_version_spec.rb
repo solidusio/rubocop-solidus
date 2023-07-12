@@ -4,7 +4,11 @@ RSpec.describe RuboCop::Cop::TargetSolidusVersion do
   include FileHelper
 
   let(:base_cop) { RuboCop::Cop::BaseCop }
-  let(:dummy_cop) { base_cop.include(RuboCop::Cop::TargetSolidusVersion).new }
+  let(:dummy_cop) { base_cop.include(RuboCop::Cop::TargetSolidusVersion).new(config) }
+
+  let(:config) { RuboCop::Config.new(hash, loaded_path) }
+  let(:hash) { {} }
+  let(:loaded_path) { 'example/.rubocop.yml' }
 
   before do
     stub_const('RuboCop::Cop::BaseCop', Class.new(RuboCop::Cop::Base))
