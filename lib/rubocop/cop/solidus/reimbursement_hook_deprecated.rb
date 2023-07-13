@@ -3,11 +3,14 @@
 module RuboCop
   module Cop
     module Solidus
+      # This cop finds reimbursement_success_hooks and reimbursement_failed_hooks calls and
+      # asks to remove them and subscribe to reimbursement_reimbursed event instead.
       class ReimbursementHookDeprecated < Base
         include TargetSolidusVersion
         minimum_solidus_version 2.11
 
-        MSG = 'Please remove reimbursement_success_hooks and reimbursement_failed_hooks. Subscribe to reimbursement_reimbursed event instead.'
+        MSG = 'Please remove reimbursement_success_hooks and reimbursement_failed_hooks. ' \
+              'Subscribe to reimbursement_reimbursed event instead.'
 
         def_node_matcher :success_hook?, <<~PATTERN
           (send (send nil? :reimbursement_success_hooks) ...)

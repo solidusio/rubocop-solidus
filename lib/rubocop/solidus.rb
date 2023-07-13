@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "solidus/version"
+require_relative 'solidus/version'
 
 module RuboCop
+  # RuboCop Solidus project namespace
   module Solidus
     class Error < StandardError; end
     # Your code goes here...
@@ -13,4 +14,3 @@ module RuboCop
     private_constant(:CONFIG_DEFAULT, :PROJECT_ROOT)
   end
 end
-

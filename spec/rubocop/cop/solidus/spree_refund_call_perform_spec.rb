@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::SpreeRefundCallPerform, :config do
-  let(:config) { RuboCop::Config.new('Solidus/SpreeRefundCallPerform' => { 'Enabled' => true }) }
-
   context 'when there is one argument' do
     it 'registers an offense when using `#create`' do
       expect_offense(<<~RUBY)

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Solidus::SpreeGatewayBogusDeprecated, :config do
-  let(:config) { RuboCop::Config.new('Solidus/SpreeGatewayBogusDeprecated' => { 'Enabled' => true }) }
-
   describe 'using #new' do
     it 'registers an offense when using `#bad_method`' do
       expect_offense(<<~RUBY)

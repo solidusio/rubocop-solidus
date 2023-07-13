@@ -29,10 +29,14 @@ module RuboCop
       # This method overrides the one in RuboCop::Cop::Base.
       # Since this method is called for every offense, we can use it to check
       # if the Solidus version is affected and skip the offense if it's not.
-      def add_offense(...)
+      def add_offense(*args, **kwargs, &block)
         return unless affected_solidus_version?
 
-        super(...)
+        if Gem::Version.new(RUBY_VERSION) > Gem::Version.new('3')
+          super(*args, **kwargs, &block)
+        else
+          super(*args, &block)
+        end
       end
 
       private
