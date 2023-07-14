@@ -22,7 +22,7 @@ module RuboCop
         end
 
         def targeted_solidus_version?(version)
-          @minimum_solidus_version <= version
+          Gem::Version.new(@minimum_solidus_version) <= Gem::Version.new(version)
         end
       end
 
@@ -47,7 +47,7 @@ module RuboCop
 
       def target_solidus_version
         @target_solidus_version ||=
-          config.for_all_cops['TargetSolidusVersion']&.to_f || solidus_version_from_lock_file || DEFAULT_SOLIDUS_VERSION
+          config.for_all_cops['TargetSolidusVersion'] || solidus_version_from_lock_file || DEFAULT_SOLIDUS_VERSION
       end
 
       def solidus_version_from_lock_file
@@ -62,7 +62,7 @@ module RuboCop
           # If Solidus (or one of its frameworks) is in Gemfile.lock, there should be a line like:
           #   solidus_core (X.X.X)
           result = line.match(/^\s+solidus_core\s+\((\d+\.\d+)/)
-          return result.captures.first.to_f if result
+          return result.captures.first if result
         end
       end
     end
