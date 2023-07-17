@@ -48,7 +48,7 @@ RSpec.describe RuboCop::Cop::TargetSolidusVersion do
       end
 
       context 'and TargetSolidusVersion is bigger than minimum_solidus_version' do
-        let(:solidus_version) { '2.6' }
+        let(:solidus_version) { '2.10' }
 
         it_behaves_like 'affected solidus version'
       end
@@ -117,19 +117,19 @@ RSpec.describe RuboCop::Cop::TargetSolidusVersion do
               GEM
                 remote: https://rubygems.org/
                 specs:
-                  solidus (3.4.3)
-                    solidus_api (= 3.4.3)
-                    solidus_backend (= 3.4.3)
-                    solidus_core (= 3.4.3)
-                    solidus_frontend (= 3.4.3)
-                    solidus_sample (= 3.4.3)
-                  solidus_core (3.4.3)
+                  solidus (3.10.3)
+                    solidus_api (= 3.10.3)
+                    solidus_backend (= 3.10.3)
+                    solidus_core (= 3.10.3)
+                    solidus_frontend (= 3.10.3)
+                    solidus_sample (= 3.10.3)
+                  solidus_core (3.10.3)
 
               PLATFORMS
                 ruby
 
               DEPENDENCIES
-                solidus (~> 3.4.0)
+                solidus (~> 3.10.0)
 
               BUNDLED WITH
                 2.3.22
