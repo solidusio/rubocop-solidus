@@ -56,7 +56,7 @@ The type of the changelog correspond to "new feature", "bug-fix" and "changed" e
 Here are a few examples:
 
 ```markdown
-* [#47](https://github.com/solidusio/rubocop-solidus/issues/46): **(Breaking)** Remove support for old Ruby versions. ([@MassimilianoLattanzio][])
+* [#46](https://github.com/solidusio/rubocop-solidus/issues/46): **(Breaking)** Remove support for old Ruby versions. ([@MassimilianoLattanzio][])
 * [#4](https://github.com/solidusio/rubocop-solidus/pull/4): Update CHANGELOG. ([@piyushswain][])
 ```
 
