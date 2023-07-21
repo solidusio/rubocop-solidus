@@ -64,8 +64,8 @@ class Changelog
     end
 
     def github_user
-      user = `git config --global credential.username`.chomp
-      warn 'Set your username with `git config --global credential.username "myusernamehere"`' if user.empty?
+      user = `git config --global user.username`.chomp
+      warn 'Set your username with `git config --global user.username "myusernamehere"`' if user.empty?
 
       user
     end
