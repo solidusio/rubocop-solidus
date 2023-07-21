@@ -8,7 +8,7 @@ A RuboCop extension focused on enforcing Solidus best practices and coding conve
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop-solidus', github: 'nebulab/rubocop-solidus', require: false
+gem 'rubocop-solidus' require: false
 ```
 
 And then execute:
