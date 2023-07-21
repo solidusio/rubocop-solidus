@@ -35,7 +35,7 @@ After this simply use the `rubocop` command to start linting.
 To create a new cop, run the following command:
 
 ```bash
-$ bundle exec rake new_cop[Solidus/NameOfTheCop]
+$ bundle exec rake 'new_cop[Solidus/NameOfTheCop]'
 ```
 
 and then follow the instructions on the screen.
@@ -45,7 +45,7 @@ and then follow the instructions on the screen.
 To release a new version, run the following command:
 
 ```bash
-$ bundle exec rake cut_release:[major|minor|patch]
+$ bundle exec rake cut_release:major|minor|patch
 ```
 
 and then follow the instructions on the screen.
