@@ -56,14 +56,14 @@ The type of the changelog correspond to "new feature", "bug-fix" and "changed" e
 Here are a few examples:
 
 ```markdown
-* [#47](https://github.com/nebulab/rubocop-solidus/issues/46): **(Breaking)** Remove support for old Ruby versions. ([@MassimilianoLattanzio][])
-* [#4](https://github.com/nebulab/rubocop-solidus/pull/4): Update CHANGELOG. ([@piyushswain][])
+* [#47](https://github.com/solidusio/rubocop-solidus/issues/46): **(Breaking)** Remove support for old Ruby versions. ([@MassimilianoLattanzio][])
+* [#4](https://github.com/solidusio/rubocop-solidus/pull/4): Update CHANGELOG. ([@piyushswain][])
 ```
 
 * Create one file `changelog/{type}_{some_description}.md`, where `type` is `new` (New feature), `fix` or `change`, and `some_description` is unique to avoid conflicts. Task `changelog:fix` (or `:new` or `:change`) can help you.
 * Mark it up in [Markdown syntax][1].
 * The entry should be a single line, starting with `* ` (an asterisk and a space).
-* If the change has a related GitHub issue (e.g. a bug fix for a reported issue), put a link to the issue as `[#123](https://github.com/nebulab/rubocop-solidus/issues/123): `.
+* If the change has a related GitHub issue (e.g. a bug fix for a reported issue), put a link to the issue as `[#123](https://github.com/solidusio/rubocop-solidus/issues/123): `.
 * Describe the brief of the change. The sentence should end with a punctuation.
 * If this is a breaking change, mark it with `**(Breaking)**`.
 * At the end of the entry, add an implicit link to your GitHub user page as `([@username][])`.
@@ -91,7 +91,7 @@ $ bundle exec rake release
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nebulab/rubocop-solidus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/solidusio/rubocop-solidus.
 
 ## License
 
