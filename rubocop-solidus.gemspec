@@ -13,13 +13,13 @@ Gem::Specification.new do |spec|
     Automatic Solidus code style checking tool.
     A RuboCop extension focused on enforcing Solidus best practices and coding conventions.
   DESCRIPTION
-  spec.homepage = 'https://www.github.com/nebulab/rubocop-solidus'
+  spec.homepage = 'https://www.github.com/solidusio/rubocop-solidus'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.4.0'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://www.github.com/nebulab/rubocop-solidus'
-  spec.metadata['changelog_uri'] = 'https://www.github.com/nebulab/rubocop-solidus'
+  spec.metadata['source_code_uri'] = 'https://www.github.com/solidusio/rubocop-solidus'
+  spec.metadata['changelog_uri'] = 'https://www.github.com/solidusio/rubocop-solidus'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
