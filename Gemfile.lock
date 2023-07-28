@@ -54,6 +54,7 @@ GEM
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     unicode-display_width (2.4.2)
+    yard (0.9.34)
 
 PLATFORMS
   -darwin-22
@@ -69,6 +70,7 @@ DEPENDENCIES
   rspec
   rubocop
   rubocop-solidus!
+  yard
 
 BUNDLED WITH
    2.3.26
