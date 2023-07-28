@@ -1,4 +1,4 @@
-name: Tests
+name: CI
 
 on:
   push:
@@ -23,9 +23,11 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
-      - name: Run the default task
-        run: bundle exec rake
+      - name: Lint  files
+        run: bundle exec rake rubocop
+      - name: Run tests
+        run: bundle exec rake spec
+      - name: Verify documentation is up to date
+        run: bundle exec rake generate_cops_documentation
+        env:
+          CI: true
