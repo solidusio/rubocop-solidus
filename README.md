@@ -30,6 +30,10 @@ require:
 
 After this simply use the `rubocop` command to start linting.
 
+## Documentation
+
+You can read about each cop supplied by RuboCop Solidus in [the docs](docs/cops.md).
+
 ## Creating new cops
 
 To create a new cop, run the following command:
