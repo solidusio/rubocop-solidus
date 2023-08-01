@@ -6,6 +6,13 @@ module RuboCop
       # This cop finds Spree::Calculator::FreeShipping calls.
       # This cop is needed as they have been deprecated in future version.
       #
+      # @example
+      #
+      #   # bad
+      #   Spree::Calculator::FreeShipping
+      #
+      #   # good
+      #
       class SpreeCalculatorFreeShippingDeprecated < Base
         MSG = 'Spree::Calculator::FreeShipping is deprecated.'
 

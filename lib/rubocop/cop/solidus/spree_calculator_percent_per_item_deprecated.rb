@@ -6,10 +6,18 @@ module RuboCop
       # This cop finds Spree::Calculator::PercentPerItem calls.
       # This cop is needed as they have been deprecated in future version.
       #
+      # @example
+      #
+      #   # bad
+      #   Spree::Calculator::PercentPerItem
+      #
+      #   # good
+      #   Spree::Calculator::PercentOnLineItem
+      #
       class SpreeCalculatorPercentPerItemDeprecated < Base
         extend AutoCorrector
 
-        MSG = 'Spree::Calculator::PercentPerItem is deprecated.'
+        MSG = 'Spree::Calculator::PercentPerItem is deprecated. Use Spree::Calculator::PercentOnLineItem instead.'
 
         def_node_matcher :percent_per_item?, <<~PATTERN
           (send (... (... :Calculator) :PercentPerItem) $_)

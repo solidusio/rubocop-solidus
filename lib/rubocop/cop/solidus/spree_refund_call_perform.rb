@@ -4,7 +4,15 @@ module RuboCop
   module Cop
     module Solidus
       # This cop finds Spree::Refund.create(your: attributes) calls and
-      # replaces them with the Spree::Refund.create(your: attributes, perform_after_create: false).perform! call
+      # replaces them with the Spree::Refund.create(your: attributes, perform_after_create: false).perform! call.
+      #
+      # @example
+      #
+      #   # bad
+      #   Spree::Refund.create(your: attributes)
+      #
+      #   # good
+      #   Spree::Refund.create(your: attributes, perform_after_create: false).perform!
       #
       class SpreeRefundCallPerform < Base
         include TargetSolidusVersion
@@ -16,7 +24,6 @@ module RuboCop
 
         RESTRICT_ON_SEND = %i[create].freeze
 
-        # @!method bad_method?(node)
         def_node_matcher :create_refund?, <<~PATTERN
           (send (const (const nil? :Spree) :Refund) :create ...)
         PATTERN

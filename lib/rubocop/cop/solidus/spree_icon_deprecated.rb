@@ -3,15 +3,15 @@
 module RuboCop
   module Cop
     module Solidus
-      # This cop finds icon helper calls and suggest using solidus_icon
+      # This cop finds icon helper calls and suggest using solidus_icon.
       #
-      # @example EnforcedStyle:
+      # @example
+      #
       #   # bad
       #   helper.icon('example')
       #
       #   # good
       #   helper.solidus_icon('example')
-      #
       #
       class SpreeIconDeprecated < Base
         extend AutoCorrector

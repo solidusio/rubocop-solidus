@@ -3,35 +3,31 @@
 module RuboCop
   module Cop
     module Solidus
-      # TODO: Write cop description and example of bad / good code. For every
-      # `SupportedStyle` and unique configuration, there needs to be examples.
-      # Examples must have valid Ruby syntax. Do not use upticks.
+      # Solidus suggests a decorator module instead of `class_eval` when overriding some features.
+      # This cop finds any `class_eval` and asks to use a decorator module instead.
+      # More info: https://guides.solidus.io/customization/customizing-the-core.
       #
-      #
-      # @example EnforcedStyle: SpreeClass
-      #   # Description of the `SpreeClass` style.
+      # @example
       #
       #   # bad
       #   SpreeClass.class_eval do
-      #   .
-      #   .
+      #     # your code here
       #   end
       #
-      #
       #   # good
-      #   module SpreeClassDecorator
-      #   .
-      #   .
+      #   module Spree
+      #     module SpreeClassDecorator
+      #       # your code here
+      #     end
+      #
+      #     Spree::SpreeClass.prepend self
       #   end
       #
       class ClassEvalDecorator < Base
-        MSG = 'Do not use `class_eval` flag. Use a decorator module instead. Check this link for an example https://guides.solidus.io/cookbook/redefining-checkout-steps'
+        MSG = 'Do not use `class_eval` flag. Use a decorator module instead. More info: https://guides.solidus.io/customization/customizing-the-core.'
 
-        # TODO: Don't call `on_send` unless the method name is in this list
-        # If you don't need `on_send` in the cop you created, remove it.
         RESTRICT_ON_SEND = %i[class_eval].freeze
 
-        # @!method on_class_eval?(node)
         def_node_matcher :on_class_eval?, <<~PATTERN
           (send  ($...) :class_eval)
         PATTERN

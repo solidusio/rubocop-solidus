@@ -3,15 +3,15 @@
 module RuboCop
   module Cop
     module Solidus
-      # This cop finds user.default_credit_card suggest using user.wallet.default_wallet_payment_source
+      # This cop finds user.default_credit_card suggest using user.wallet.default_wallet_payment_source.
       #
-      # @example EnforcedStyle:
+      # @example
+      #
       #   # bad
       #   user.default_credit_card
       #
       #   # good
       #   user.wallet.default_wallet_payment_source
-      #
       #
       class SpreeDefaultCreditCardDeprecated < Base
         extend AutoCorrector
@@ -20,7 +20,6 @@ module RuboCop
 
         MSG = 'user.default_credit_card is deprecated. Please use user.wallet.default_wallet_payment_source instead.'
 
-        # @!method bad_method?(node)
         def_node_matcher :default_credit_card?, <<~PATTERN
           (send ... :default_credit_card)
         PATTERN
