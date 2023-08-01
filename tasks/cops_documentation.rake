@@ -47,7 +47,7 @@ task generate_cops_documentation: :yard_for_generate_documentation do
   def properties(config, cop)
     header = [
       'Enabled by default', 'Safe', 'Supports autocorrection', 'VersionAdded',
-      'VersionChanged'
+      'VersionChanged', 'Required Solidus Version'
     ]
     config = config.for_cop(cop)
     safe_auto_correct = config.fetch('SafeAutoCorrect', true)
@@ -56,12 +56,18 @@ task generate_cops_documentation: :yard_for_generate_documentation do
                   else
                     'No'
                   end
+    minimum_solidus_version = if cop.respond_to?(:required_minimum_solidus_version)
+                                cop.required_minimum_solidus_version
+                              else
+                                '-'
+                              end
     content = [[
       config.fetch('Enabled') ? 'Enabled' : 'Disabled',
       config.fetch('Safe', true) ? 'Yes' : 'No',
       autocorrect,
       config.fetch('VersionAdded', '-'),
-      config.fetch('VersionChanged', '-')
+      config.fetch('VersionChanged', '-'),
+      minimum_solidus_version
     ]]
     "#{to_table(header, content)}\n"
   end

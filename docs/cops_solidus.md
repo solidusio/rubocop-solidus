@@ -2,9 +2,9 @@
 
 ## Solidus/ClassEvalDecorator
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.1.0 | - | -
 
 Solidus suggests a decorator module instead of `class_eval` when overriding some features.
 This cop finds any `class_eval` and asks to use a decorator module instead.
@@ -34,9 +34,9 @@ end
 
 ## Solidus/ReimbursementHookDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.1.0 | - | 2.11
 
 This cop finds reimbursement_success_hooks and reimbursement_failed_hooks calls and
 asks to remove them and subscribe to reimbursement_reimbursed event instead.
@@ -64,9 +64,9 @@ reimbursement_failed_hooks.any?
 
 ## Solidus/SpreeCalculatorFreeShippingDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.1.0 | - | -
 
 This cop finds Spree::Calculator::FreeShipping calls.
 This cop is needed as they have been deprecated in future version.
@@ -86,9 +86,9 @@ Spree::Calculator::FreeShipping
 
 ## Solidus/SpreeCalculatorPercentPerItemDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | Yes  | 0.1.0 | - | -
 
 This cop finds Spree::Calculator::PercentPerItem calls.
 This cop is needed as they have been deprecated in future version.
@@ -109,9 +109,9 @@ Spree::Calculator::PercentOnLineItem
 
 ## Solidus/SpreeCalculatorPriceSackDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.1.0 | - | -
 
 This cop finds Spree::Calculator::PriceSack calls.
 This cop is needed as they have been deprecated in future version.
@@ -131,9 +131,9 @@ Spree::Calculator::PriceSack
 
 ## Solidus/SpreeDefaultCreditCardDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | Yes  | 0.1.0 | - | 2.2
 
 This cop finds user.default_credit_card suggest using user.wallet.default_wallet_payment_source.
 
@@ -153,9 +153,9 @@ user.wallet.default_wallet_payment_source
 
 ## Solidus/SpreeGatewayBogusDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | Yes  | 0.1.0 | - | 2.1
 
 This cop finds Spree::Gateway::Bogus calls and replaces them with the Spree::PaymentMethod::BogusCreditCard.
 This cop is needed as the Spree::Gateway::Bogus has been deprecated in future version.
@@ -180,9 +180,9 @@ Spree::PaymentMethod::BogusCreditCard.create!
 
 ## Solidus/SpreeIconDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | Yes  | 0.1.0 | - | 2.3
 
 This cop finds icon helper calls and suggest using solidus_icon.
 
@@ -202,9 +202,9 @@ helper.solidus_icon('example')
 
 ## Solidus/SpreeRefundCallPerform
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.1.0 | - | 2.11
 
 This cop finds Spree::Refund.create(your: attributes) calls and
 replaces them with the Spree::Refund.create(your: attributes, perform_after_create: false).perform! call.
@@ -225,9 +225,9 @@ Spree::Refund.create(your: attributes, perform_after_create: false).perform!
 
 ## Solidus/SpreeTDeprecated
 
-Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged
---- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | -
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | Yes  | 0.1.0 | - | -
 
 This cop finds Spree.t method calls and replaces them with the I18n,t method call.
 This cop is needed as the Spree.t version has been deprecated in future version.
