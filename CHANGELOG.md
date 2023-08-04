@@ -1,5 +1,11 @@
 ## master (unreleased)
 
+## 0.1.4 (2023-08-04)
+
+### New features
+
+* [#51](https://github.com/solidusio/rubocop-solidus/pull/51): Create automatic documentation based on the cop's descriptions. ([@MassimilianoLattanzio][])
+
 ## 0.1.3 (2023-07-28)
 
 ### New features

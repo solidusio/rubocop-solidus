@@ -2,12 +2,20 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   NewCops: enable
+  SuggestExtensions: false
 
 Naming/FileName:
  Exclude:
    - lib/rubocop-solidus.rb
 
 Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - '*.gemspec'
+
+Metrics/MethodLength:
   Exclude:
     - 'Rakefile'
     - '**/*.rake'

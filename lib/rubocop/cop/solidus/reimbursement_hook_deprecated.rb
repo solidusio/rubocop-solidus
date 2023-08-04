@@ -5,6 +5,23 @@ module RuboCop
     module Solidus
       # This cop finds reimbursement_success_hooks and reimbursement_failed_hooks calls and
       # asks to remove them and subscribe to reimbursement_reimbursed event instead.
+      #
+      # @example
+      #
+      #   # bad
+      #   reimbursement_success_hooks.each { |h| h.call self }
+      #   reimbursement_failed_hooks.each { |h| h.call self }
+      #
+      #   # good
+      #
+      # @example
+      #
+      #   # bad
+      #   reimbursement_success_hooks.any?
+      #   reimbursement_failed_hooks.any?
+      #
+      #   # good
+      #
       class ReimbursementHookDeprecated < Base
         include TargetSolidusVersion
         minimum_solidus_version 2.11

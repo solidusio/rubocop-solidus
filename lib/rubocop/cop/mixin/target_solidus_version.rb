@@ -24,6 +24,10 @@ module RuboCop
         def targeted_solidus_version?(version)
           Gem::Version.new(@minimum_solidus_version) <= Gem::Version.new(version)
         end
+
+        def required_minimum_solidus_version
+          @minimum_solidus_version
+        end
       end
 
       # This method overrides the one in RuboCop::Cop::Base.

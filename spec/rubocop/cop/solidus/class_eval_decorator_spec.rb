@@ -4,7 +4,7 @@ RSpec.describe RuboCop::Cop::Solidus::ClassEvalDecorator, :config do
   it 'registers an offense when using `#bad_method`' do
     expect_offense(<<~RUBY)
       Product.class_eval do
-      ^^^^^^^^^^^^^^^^^^ Do not use `class_eval` flag. Use a decorator module instead. Check this link for an example https://guides.solidus.io/cookbook/redefining-checkout-steps\n
+      ^^^^^^^^^^^^^^^^^^ Do not use `class_eval` flag. Use a decorator module instead. More info: https://guides.solidus.io/customization/customizing-the-core.\n
       end
 
     RUBY

@@ -6,6 +6,13 @@ module RuboCop
       # This cop finds Spree::Calculator::PriceSack calls.
       # This cop is needed as they have been deprecated in future version.
       #
+      # @example
+      #
+      #   # bad
+      #   Spree::Calculator::PriceSack
+      #
+      #   # good
+      #
       class SpreeCalculatorPriceSackDeprecated < Base
         MSG = 'Spree::Calculator::PriceSack is deprecated.'
 

@@ -5,7 +5,7 @@ RSpec.describe RuboCop::Cop::Solidus::SpreeCalculatorPercentPerItemDeprecated, :
     it 'registers an offense when using `#new`' do
       expect_offense(<<~RUBY)
         Spree::Calculator::PercentPerItem.new
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Spree::Calculator::PercentPerItem is deprecated.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Spree::Calculator::PercentPerItem is deprecated. Use Spree::Calculator::PercentOnLineItem instead.
       RUBY
     end
 
@@ -20,7 +20,7 @@ RSpec.describe RuboCop::Cop::Solidus::SpreeCalculatorPercentPerItemDeprecated, :
     it 'registers an offense when using `#create`' do
       expect_offense(<<~RUBY)
         Spree::Calculator::PercentPerItem.create
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Spree::Calculator::PercentPerItem is deprecated.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Spree::Calculator::PercentPerItem is deprecated. Use Spree::Calculator::PercentOnLineItem instead.
       RUBY
     end
 

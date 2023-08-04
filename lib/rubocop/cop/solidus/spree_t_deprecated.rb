@@ -3,16 +3,20 @@
 module RuboCop
   module Cop
     module Solidus
-      # This cop finds Spree.t method calls and replaces them with the I18n,t method call
+      # This cop finds Spree.t method calls and replaces them with the I18n,t method call.
       # This cop is needed as the Spree.t version has been deprecated in future version.
       #
+      # @example
+      #   # Without any parameters
       #
-      # @example EnforcedStyle: bar (default)
       #   # bad
       #   Spree.t(:bar)
       #
       #   # good
       #   I18n.t(:bar, scope: :spree)
+      #
+      # @example
+      #   # With the scope parameter
       #
       #   # bad
       #   Spree.t(:bar, scope: [:city])
@@ -20,11 +24,17 @@ module RuboCop
       #   # good
       #   I18n.t(:bar, scope: [:spree, :city])
       #
+      # @example
+      #   # With the scope and other parameters
+      #
       #   # bad
       #   Spree.t(:bar, scope: [:city], email: email)
       #
       #   # good
       #   I18n.t(:bar, scope: [:spree, :city], email: email)
+      #
+      # @example
+      #   # With the scope parameter as a string
       #
       #   # bad
       #   Spree.t('bar', scope: 'admin.city')
@@ -32,14 +42,12 @@ module RuboCop
       #   # good
       #   I18n.t('bar', scope: 'spree.admin.city')
       #
-      #
       class SpreeTDeprecated < Base
         extend AutoCorrector
         MSG = 'Use I18n.t instead of Spree.t which has been deprecated in future versions.'
 
         RESTRICT_ON_SEND = %i[t].freeze
 
-        # @!method spree_t?(node)
         def_node_matcher :spree_t?, <<~PATTERN
           (send ($...) :t ...)
         PATTERN

@@ -6,7 +6,12 @@ require 'rspec/core/rake_task'
 
 Dir['tasks/**/*.rake'].each { |t| load t }
 
-task default: %i[spec rubocop]
+task default: %i[
+  spec
+  rubocop
+  generate_cops_documentation
+  documentation_syntax_check
+]
 
 RuboCop::RakeTask.new
 

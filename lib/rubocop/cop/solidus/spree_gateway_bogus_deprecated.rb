@@ -3,28 +3,19 @@
 module RuboCop
   module Cop
     module Solidus
-      # This cop finds Spree::Gateway::Bogus calls and replaces them with the Spree::PaymentMethod::BogusCreditCard call
+      # This cop finds Spree::Gateway::Bogus calls and replaces them with the Spree::PaymentMethod::BogusCreditCard.
       # This cop is needed as the Spree::Gateway::Bogus has been deprecated in future version.
       #
-      # @example EnforcedStyle:
+      # @example
       #   # bad
       #   Spree::Gateway::Bogus.new
-      #
-      #   # good
-      #   Spree::PaymentMethod::BogusCreditCard.new
-      #
-      #   # bad
       #   Spree::Gateway::Bogus.create
-      #
-      #   # good
-      #   Spree::PaymentMethod::BogusCreditCard.create
-      #
-      #   # bad
       #   Spree::Gateway::Bogus.create!
       #
       #   # good
+      #   Spree::PaymentMethod::BogusCreditCard.new
+      #   Spree::PaymentMethod::BogusCreditCard.create
       #   Spree::PaymentMethod::BogusCreditCard.create!
-      #
       #
       class SpreeGatewayBogusDeprecated < Base
         extend AutoCorrector
@@ -33,7 +24,6 @@ module RuboCop
 
         MSG = 'Spree::Gateway::Bogus is deprecated. Please use Spree::PaymentMethod::BogusCreditCard instead.'
 
-        # @!method bad_method?(node)
         def_node_matcher :bad_class?, <<~PATTERN
           (send (... (... :Gateway) :Bogus) $_)
         PATTERN

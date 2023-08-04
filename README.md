@@ -3,7 +3,9 @@
 Automatic Solidus code style checking tool.
 A RuboCop extension focused on enforcing Solidus best practices and coding conventions.
 
-## Installation
+## Getting started
+
+### Installation
 
 Add this line to your application's Gemfile:
 
@@ -19,7 +21,7 @@ Or install it yourself as:
 
     $ gem install rubocop-solidus
 
-## Usage
+### Usage
 
 To Start using this extension in your application add the following lines to your `.rubocop.yml` file
 
@@ -30,7 +32,17 @@ require:
 
 After this simply use the `rubocop` command to start linting.
 
-## Creating new cops
+## Documentation
+
+You can read about each cop supplied by RuboCop Solidus in [the docs](docs/cops.md).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/solidusio/rubocop-solidus.
+
+To contribute a new cop, please see the sections below.
+
+### Creating new cops
 
 To create a new cop, run the following command:
 
@@ -40,7 +52,7 @@ $ bundle exec rake 'new_cop[Solidus/NameOfTheCop]'
 
 and then follow the instructions on the screen.
 
-## Creating changelog entries
+### Creating changelog entries
 
 Changelog entries are just files under the `changelog/` folder that will be merged
 into `CHANGELOG.md` at release time. You can create new changelog entries like this:
@@ -51,7 +63,7 @@ $ bundle exec rake changelog:new|fix|change
 
 The type of the changelog correspond to "new feature", "bug-fix" and "changed" entries in the changelog.
 
-### Changelog entry format
+#### Changelog entry format
 
 Here are a few examples:
 
@@ -68,7 +80,7 @@ Here are a few examples:
 * If this is a breaking change, mark it with `**(Breaking)**`.
 * At the end of the entry, add an implicit link to your GitHub user page as `([@username][])`.
 
-## Release a new version
+### Release a new version
 
 To release a new version, run the following command:
 
@@ -88,10 +100,6 @@ To deploy the new version to RubyGems, run the following command:
 ```bash
 $ bundle exec rake release
 ```
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/solidusio/rubocop-solidus.
 
 ## License
 
