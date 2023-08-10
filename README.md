@@ -28,7 +28,47 @@ require:
     - rubocop-solidus
 ```
 
-After this simply use the `rubocop` command to start linting.
+
+After this^, simply use the `rubocop` command to start linting your Ruby(`.rb`) files.
+
+### For linting `.erb` files
+
+We recommend to run rubocop solidus cops on ERB files. The simplest method to do this is via
+[erblint](https://github.com/Shopify/erb-lint)
+
+#### Add ERBlint to your Gemfile
+```ruby
+  gem 'erb_lint'
+```
+
+#### Add ERBlint config (`.erb-lint.yml`)
+This is the most basic ERBlint config that can be used to run all and only the Solidus cops in any project
+```yaml
+---
+EnableDefaultLinters: false
+linters:
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+    only:
+      - Solidus
+```
+
+#### To run ERBlint for all ERB files
+```bash
+# From project directory
+bundle exec erblint .
+```
+
+#### To run autocorrect on ERB files
+Any cop that supports autocorrect for rubocop implicitly supports autocorrect
+for ERB files as well.
+```bash
+# From project directory
+bundle exec erblint -a .
+```
 
 ## Creating new cops
 
