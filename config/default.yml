@@ -67,3 +67,9 @@ Solidus/SpreeTDeprecated:
   Enabled: true
   VersionAdded: '0.1.0'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/22'
+
+Solidus/TaxCategoryDeprecated:
+  Description: 'Checks if .tax_category=Instance is being used and suggest to replace it with .tax_categories=<Array of Instances>'
+  Enabled: true
+  VersionAdded: '0.1.4'
+  Reference: 'https://github.com/solidusio/solidus/issues/1836'
