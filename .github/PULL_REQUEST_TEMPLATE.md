@@ -37,7 +37,7 @@ The more detailed you are, the better.
 **Before submitting the PR make sure the following are checked:**
 
 * [ ] The PR relates to *only* one cop with a clear title and description.
-* [ ] Feature branch is up-to-date with `master` (if not - rebase it).
+* [ ] Feature branch is up-to-date with `main` (if not - rebase it).
 * [ ] Squashed related commits together.
 * [ ] Added tests.
 * [ ] Ran and ensured all tests are passing on a development environment.

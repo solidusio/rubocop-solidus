@@ -12,11 +12,11 @@ namespace :cut_release do
 
   def add_header_to_changelog(version)
     changelog = File.read('CHANGELOG.md')
-    head, tail = changelog.split("## master (unreleased)\n\n", 2)
+    head, tail = changelog.split("## main (unreleased)\n\n", 2)
 
     File.open('CHANGELOG.md', 'w') do |f|
       f << head
-      f << "## master (unreleased)\n\n"
+      f << "## main (unreleased)\n\n"
       f << "## #{version} (#{Time.now.strftime('%F')})\n\n"
       f << tail
     end
