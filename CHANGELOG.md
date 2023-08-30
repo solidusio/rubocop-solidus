@@ -1,4 +1,4 @@
-## master (unreleased)
+## main (unreleased)
 
 ## 0.1.4 (2023-08-04)
 
