@@ -44,6 +44,7 @@ module RuboCop
       #
       class SpreeTDeprecated < Base
         extend AutoCorrector
+        include IgnoredNode
         MSG = 'Use I18n.t instead of Spree.t which has been deprecated in future versions.'
 
         RESTRICT_ON_SEND = %i[t].freeze
@@ -58,8 +59,11 @@ module RuboCop
           return unless spree_t?(node).include?(:Spree)
 
           add_offense(node) do |corrector|
+            next if part_of_ignored_node?(node)
+
             corrector.replace(node, corrected_statement(node))
           end
+          ignore_node(node)
         end
 
         # rubocop:disable Metrics/MethodLength
