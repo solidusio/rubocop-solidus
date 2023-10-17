@@ -91,6 +91,20 @@ RSpec.describe RuboCop::Cop::Solidus::SpreeTDeprecated, :config do
         I18n.t(:solidus_store, scope: [:custom_scope], email: params[:email])
       RUBY
     end
+
+    context 'when nested correction' do
+      it 'registers an offense when using `#bad_method`' do
+        expect_offense(<<~RUBY)
+          Spree.t(:solidus_store, resource: Spree.t(:test))
+                                            ^^^^^^^^^^^^^^ Use I18n.t instead of Spree.t which has been deprecated in future versions.
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use I18n.t instead of Spree.t which has been deprecated in future versions.
+        RUBY
+
+        expect_correction(<<~RUBY)
+          I18n.t(:solidus_store, scope: :spree, resource: I18n.t(:test, scope: :spree))
+        RUBY
+      end
+    end
   end
 
   describe 'first argument is a string' do
@@ -182,6 +196,20 @@ RSpec.describe RuboCop::Cop::Solidus::SpreeTDeprecated, :config do
       expect_no_offenses(<<~RUBY)
         I18n.t('solidus_store', scope: [:custom_scope], email: params[:email])
       RUBY
+    end
+
+    context 'when nested correction' do
+      it 'registers an offense when using `#bad_method`' do
+        expect_offense(<<~RUBY)
+          Spree.t(:solidus_store, resource: Spree.t(:test))
+                                            ^^^^^^^^^^^^^^ Use I18n.t instead of Spree.t which has been deprecated in future versions.
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use I18n.t instead of Spree.t which has been deprecated in future versions.
+        RUBY
+
+        expect_correction(<<~RUBY)
+          I18n.t(:solidus_store, scope: :spree, resource: I18n.t(:test, scope: :spree))
+        RUBY
+      end
     end
   end
 end
