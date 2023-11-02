@@ -14,6 +14,12 @@ Solidus/ClassEvalDecorator:
   VersionAdded: '0.1.0'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/21'
 
+Solidus/ExistingCardIdDeprecated:
+  Description: 'Checks if existing_card_id is being used and suggest using wallet_payment_source_id instead'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/solidusio/rubocop-solidus/issues/60'
+
 Solidus/ReimbursementHookDeprecated:
   Description: 'Checks if reimbursement_success_hooks and reimbursement_failed_hooks is being used'
   Enabled: true
