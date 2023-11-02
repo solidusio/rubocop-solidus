@@ -1,5 +1,7 @@
 ## main (unreleased)
 
+## 0.2.0 (2023-11-02)
+
 ### New features
 
 * [#60](https://github.com/solidusio/rubocop-solidus/issues/60): Create new cop to check existing_card_id. ([@MassimilianoLattanzio][])
