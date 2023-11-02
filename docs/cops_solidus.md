@@ -4,7 +4,7 @@
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | - | -
+Enabled | Yes | No | 0.1 | - | -
 
 Solidus suggests a decorator module instead of `class_eval` when overriding some features.
 This cop finds any `class_eval` and asks to use a decorator module instead.
@@ -32,11 +32,39 @@ end
 
 * [https://github.com/solidusio/rubocop-solidus/issues/21](https://github.com/solidusio/rubocop-solidus/issues/21)
 
+## Solidus/ExistingCardIdDeprecated
+
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.2 | - | 2.2
+
+This cop finds existing_card_id occurrences and suggest using wallet_payment_source_id instead.
+
+### Examples
+
+```ruby
+# bad
+{
+  name: payment_method.name,
+  existing_card_id: payment_source.id
+}
+
+# good
+{
+  name: payment_method.name,
+  wallet_payment_source_id: payment_source.wallet.wallet_payment_sources.first.id
+}
+```
+
+### References
+
+* [https://github.com/solidusio/rubocop-solidus/issues/60](https://github.com/solidusio/rubocop-solidus/issues/60)
+
 ## Solidus/ReimbursementHookDeprecated
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | - | 2.11
+Enabled | Yes | No | 0.1 | - | 2.11
 
 This cop finds reimbursement_success_hooks and reimbursement_failed_hooks calls and
 asks to remove them and subscribe to reimbursement_reimbursed event instead.
@@ -66,7 +94,7 @@ reimbursement_failed_hooks.any?
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | - | -
+Enabled | Yes | No | 0.1 | - | -
 
 This cop finds Spree::Calculator::FreeShipping calls.
 This cop is needed as they have been deprecated in future version.
@@ -88,7 +116,7 @@ Spree::Calculator::FreeShipping
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | - | -
+Enabled | Yes | Yes  | 0.1 | - | -
 
 This cop finds Spree::Calculator::PercentPerItem calls.
 This cop is needed as they have been deprecated in future version.
@@ -111,7 +139,7 @@ Spree::Calculator::PercentOnLineItem
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | - | -
+Enabled | Yes | No | 0.1 | - | -
 
 This cop finds Spree::Calculator::PriceSack calls.
 This cop is needed as they have been deprecated in future version.
@@ -133,7 +161,7 @@ Spree::Calculator::PriceSack
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | - | 2.2
+Enabled | Yes | Yes  | 0.1 | - | 2.2
 
 This cop finds user.default_credit_card suggest using user.wallet.default_wallet_payment_source.
 
@@ -155,7 +183,7 @@ user.wallet.default_wallet_payment_source
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | - | 2.1
+Enabled | Yes | Yes  | 0.1 | - | 2.1
 
 This cop finds Spree::Gateway::Bogus calls and replaces them with the Spree::PaymentMethod::BogusCreditCard.
 This cop is needed as the Spree::Gateway::Bogus has been deprecated in future version.
@@ -182,7 +210,7 @@ Spree::PaymentMethod::BogusCreditCard.create!
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | - | 2.3
+Enabled | Yes | Yes  | 0.1 | - | 2.3
 
 This cop finds icon helper calls and suggest using solidus_icon.
 
@@ -204,7 +232,7 @@ helper.solidus_icon('example')
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | 0.1.0 | - | 2.11
+Enabled | Yes | No | 0.1 | - | 2.11
 
 This cop finds Spree::Refund.create(your: attributes) calls and
 replaces them with the Spree::Refund.create(your: attributes, perform_after_create: false).perform! call.
@@ -227,7 +255,7 @@ Spree::Refund.create(your: attributes, perform_after_create: false).perform!
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1.0 | - | -
+Enabled | Yes | Yes  | 0.1 | - | -
 
 This cop finds Spree.t method calls and replaces them with the I18n,t method call.
 This cop is needed as the Spree.t version has been deprecated in future version.
