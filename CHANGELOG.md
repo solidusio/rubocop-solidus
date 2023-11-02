@@ -1,5 +1,13 @@
 ## main (unreleased)
 
+### New features
+
+* [#60](https://github.com/solidusio/rubocop-solidus/issues/60): Create new cop to check existing_card_id. ([@MassimilianoLattanzio][])
+
+### Bug fixes
+
+* [#60](https://github.com/solidusio/rubocop-solidus/issues/60): Fix overridden add_offense method. ([@MassimilianoLattanzio][])
+
 ## 0.1.4 (2023-08-04)
 
 ### New features
