@@ -36,7 +36,7 @@ module RuboCop
       def add_offense(*args, **kwargs, &block)
         return unless affected_solidus_version?
 
-        if Gem::Version.new(RUBY_VERSION) > Gem::Version.new('3')
+        if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.7')
           super(*args, **kwargs, &block)
         else
           super(*args, &block)
