@@ -73,3 +73,9 @@ Solidus/SpreeTDeprecated:
   Enabled: true
   VersionAdded: '0.1'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/22'
+
+Solidus/TaxCategoryDeprecated:
+  Description: 'Checks if tax_category is being used and issue a warning'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/solidusio/rubocop-solidus/issues/25'
