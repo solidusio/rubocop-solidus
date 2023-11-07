@@ -50,6 +50,12 @@ Solidus/SpreeCalculatorPriceSackDeprecated:
   VersionAdded: '0.1'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/29'
 
+Solidus/SpreeDefaultAddressDeprecated:
+  Description: 'Checks if user.default_address or user.default_user_address is used and suggest using user.ship_address or user.default_user_ship_address'
+  Enabled: true
+  VersionAdded: '0.1'
+  Reference: 'https://github.com/solidusio/rubocop-solidus/issues/61'
+
 Solidus/SpreeDefaultCreditCardDeprecated:
   Description: 'Checks if user.default_credit_card is used and suggest using user.wallet.default_wallet_payment_source'
   Enabled: true

@@ -10,6 +10,7 @@ In the following sections, you will find all available cops:
 * [Solidus/SpreeCalculatorFreeShippingDeprecated](cops_solidus.md#solidusspreecalculatorfreeshippingdeprecated)
 * [Solidus/SpreeCalculatorPercentPerItemDeprecated](cops_solidus.md#solidusspreecalculatorpercentperitemdeprecated)
 * [Solidus/SpreeCalculatorPriceSackDeprecated](cops_solidus.md#solidusspreecalculatorpricesackdeprecated)
+* [Solidus/SpreeDefaultAddressDeprecated](cops_solidus.md#solidusspreedefaultaddressdeprecated)
 * [Solidus/SpreeDefaultCreditCardDeprecated](cops_solidus.md#solidusspreedefaultcreditcarddeprecated)
 * [Solidus/SpreeGatewayBogusDeprecated](cops_solidus.md#solidusspreegatewaybogusdeprecated)
 * [Solidus/SpreeIconDeprecated](cops_solidus.md#solidusspreeicondeprecated)

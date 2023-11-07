@@ -182,6 +182,31 @@ Spree::Calculator::PriceSack
 
 * [https://github.com/solidusio/rubocop-solidus/issues/29](https://github.com/solidusio/rubocop-solidus/issues/29)
 
+## Solidus/SpreeDefaultAddressDeprecated
+
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.1 | - | 2.11
+
+This cop finds user.default_address or user.default_address and suggest
+using user.ship_address or user.default_user_ship_address instead.
+
+### Examples
+
+```ruby
+# bad
+user.default_address
+user.default_user_address
+
+# good
+user.ship_address
+user.default_user_ship_address
+```
+
+### References
+
+* [https://github.com/solidusio/rubocop-solidus/issues/61](https://github.com/solidusio/rubocop-solidus/issues/61)
+
 ## Solidus/SpreeDefaultCreditCardDeprecated
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
