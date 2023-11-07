@@ -1,5 +1,9 @@
 ## main (unreleased)
 
+### New features
+
+* [#25](https://github.com/solidusio/rubocop-solidus/issues/25): Add solidus/tax_category_deprecated warning cop. ([@safafa][])
+
 ## 0.2.0 (2023-11-02)
 
 ### New features
@@ -36,3 +40,4 @@
 
 - Initial release
 [@MassimilianoLattanzio]: https://github.com/MassimilianoLattanzio
+[@safafa]: https://github.com/safafa
