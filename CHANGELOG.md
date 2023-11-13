@@ -3,6 +3,8 @@
 ### New features
 
 * [#25](https://github.com/solidusio/rubocop-solidus/issues/25): Add solidus/tax_category_deprecated warning cop. ([@safafa][])
+* [#31](https://github.com/solidusio/rubocop-solidus/issues/31): Add discounted amount deprecated warning cop. ([@safafa][])
+
 ### Bug fixes
 
 * [#53](https://github.com/solidusio/rubocop-solidus/pull/53): Change spree_default_credit_card_deperecated cop severity to warning. ([@safafa][])
