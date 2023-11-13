@@ -3,6 +3,7 @@
 require_relative 'mixin/target_solidus_version'
 
 require_relative 'solidus/class_eval_decorator'
+require_relative 'solidus/discounted_amount_deprecated'
 require_relative 'solidus/existing_card_id_deprecated'
 require_relative 'solidus/reimbursement_hook_deprecated'
 require_relative 'solidus/spree_calculator_free_shipping_deprecated'
