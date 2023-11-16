@@ -14,7 +14,6 @@ module RuboCop
       #   user.wallet.default_wallet_payment_source
       #
       class SpreeDefaultCreditCardDeprecated < Base
-        extend AutoCorrector
         include TargetSolidusVersion
         minimum_solidus_version 2.2
 
@@ -27,9 +26,7 @@ module RuboCop
         def on_send(node)
           return unless default_credit_card?(node)
 
-          add_offense(node) do |corrector|
-            corrector.replace(node, node.source.gsub('default_credit_card', 'wallet.default_wallet_payment_source'))
-          end
+          add_offense(node, severity: :warning)
         end
       end
     end
