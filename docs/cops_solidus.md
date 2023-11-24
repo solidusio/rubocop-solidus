@@ -164,7 +164,7 @@ Spree::Calculator::PriceSack
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | Yes  | 0.1 | - | 2.2
+Enabled | Yes | No | 0.1 | - | 2.2
 
 This cop finds user.default_credit_card suggest using user.wallet.default_wallet_payment_source.
 
