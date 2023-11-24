@@ -305,3 +305,25 @@ I18n.t('bar', scope: 'spree.admin.city')
 ### References
 
 * [https://github.com/solidusio/rubocop-solidus/issues/22](https://github.com/solidusio/rubocop-solidus/issues/22)
+
+## Solidus/TaxCategoryDeprecated
+
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | <<next>> | - | 2.2
+
+This cop finds .tax_category occurrences and suggest using .tax_categories instead.
+
+### Examples
+
+```ruby
+# bad
+  model.tax_category = data
+
+# good
+  model.tax_categories = [data]
+```
+
+### References
+
+* [https://github.com/solidusio/rubocop-solidus/issues/25](https://github.com/solidusio/rubocop-solidus/issues/25)
