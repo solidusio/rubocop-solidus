@@ -233,7 +233,7 @@ task generate_cops_documentation: :yard_for_generate_documentation do
   # rubocop:enable Metrics/AbcSize
 
   def print_table_of_contents(cops)
-    path = "#{Dir.pwd}/docs/cops.md"
+    path = "#{Dir.pwd}/docs/index.md"
     original = File.read(path)
     content = +"<!-- START_COP_LIST -->\n"
 
