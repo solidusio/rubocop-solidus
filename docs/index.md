@@ -14,5 +14,6 @@ In the following sections, you will find all available cops:
 * [Solidus/SpreeIconDeprecated](cops_solidus.md#solidusspreeicondeprecated)
 * [Solidus/SpreeRefundCallPerform](cops_solidus.md#solidusspreerefundcallperform)
 * [Solidus/SpreeTDeprecated](cops_solidus.md#solidusspreetdeprecated)
+* [Solidus/TaxCategoryDeprecated](cops_solidus.md#solidustaxcategorydeprecated)
 
 <!-- END_COP_LIST -->
