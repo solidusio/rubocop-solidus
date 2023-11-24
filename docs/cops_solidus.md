@@ -35,6 +35,28 @@ end
 
 * [https://github.com/solidusio/rubocop-solidus/issues/21](https://github.com/solidusio/rubocop-solidus/issues/21)
 
+## Solidus/DiscountedAmountDeprecated
+
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | <<next>> | - | 2.4
+
+This cop finds .discounted_amount occurrences and suggest using .total_before_tax instead.
+
+### Examples
+
+```ruby
+# bad
+line_item.discounted_amount
+
+# good
+line_item.total_before_tax
+```
+
+### References
+
+* [https://github.com/solidusio/rubocop-solidus/issues/31](https://github.com/solidusio/rubocop-solidus/issues/31)
+
 ## Solidus/ExistingCardIdDeprecated
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
