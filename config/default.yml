@@ -14,6 +14,12 @@ Solidus/ClassEvalDecorator:
   VersionAdded: '0.1'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/21'
 
+Solidus/DiscountedAmountDeprecated:
+  Description: 'Checks if .discounted_amount is being used and suggest using .total_before_tax instead.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/solidusio/rubocop-solidus/issues/31'
+
 Solidus/ExistingCardIdDeprecated:
   Description: 'Checks if existing_card_id is being used and suggest using wallet_payment_source_id instead'
   Enabled: true

@@ -4,6 +4,7 @@ In the following sections, you will find all available cops:
 #### Department [Solidus](cops_solidus.md)
 
 * [Solidus/ClassEvalDecorator](cops_solidus.md#solidusclassevaldecorator)
+* [Solidus/DiscountedAmountDeprecated](cops_solidus.md#solidusdiscountedamountdeprecated)
 * [Solidus/ExistingCardIdDeprecated](cops_solidus.md#solidusexistingcardiddeprecated)
 * [Solidus/ReimbursementHookDeprecated](cops_solidus.md#solidusreimbursementhookdeprecated)
 * [Solidus/SpreeCalculatorFreeShippingDeprecated](cops_solidus.md#solidusspreecalculatorfreeshippingdeprecated)
