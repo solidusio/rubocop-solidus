@@ -74,7 +74,7 @@ bundle exec erblint -a .
 
 ## Documentation
 
-You can read about each cop supplied by RuboCop Solidus in [the docs](docs/cops.md).
+You can read about each cop supplied by RuboCop Solidus in [the docs](https://solidusio.github.io/rubocop-solidus/).
 
 ## Contributing
 
