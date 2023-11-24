@@ -1,0 +1,3 @@
+theme: jekyll-theme-cayman
+title: Automatic Solidus code style checking tool
+description: A RuboCop extension focused on enforcing Solidus best practices and coding conventions

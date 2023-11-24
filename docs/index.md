@@ -1,6 +1,4 @@
-## Available cops
-
-In the following section you find all available cops:
+In the following sections, you will find all available cops:
 
 <!-- START_COP_LIST -->
 #### Department [Solidus](cops_solidus.md)

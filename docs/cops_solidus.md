@@ -1,4 +1,7 @@
-# Solidus
+---
+layout: departments
+title: List of available Solidus cops
+---
 
 ## Solidus/ClassEvalDecorator
 
