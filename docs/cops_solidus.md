@@ -39,7 +39,7 @@ end
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | <<next>> | - | 2.4
+Enabled | Yes | No | 0.3 | - | 2.4
 
 This cop finds .discounted_amount occurrences and suggest using .total_before_tax instead.
 
@@ -181,6 +181,31 @@ Spree::Calculator::PriceSack
 ### References
 
 * [https://github.com/solidusio/rubocop-solidus/issues/29](https://github.com/solidusio/rubocop-solidus/issues/29)
+
+## Solidus/SpreeDefaultAddressDeprecated
+
+Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
+--- | --- | --- | --- | --- | ---
+Enabled | Yes | No | 0.3 | - | 2.11
+
+This cop finds user.default_address or user.default_address and suggest
+using user.ship_address or user.default_user_ship_address instead.
+
+### Examples
+
+```ruby
+# bad
+user.default_address
+user.default_user_address
+
+# good
+user.ship_address
+user.default_user_ship_address
+```
+
+### References
+
+* [https://github.com/solidusio/rubocop-solidus/issues/61](https://github.com/solidusio/rubocop-solidus/issues/61)
 
 ## Solidus/SpreeDefaultCreditCardDeprecated
 
@@ -332,7 +357,7 @@ I18n.t('bar', scope: 'spree.admin.city')
 
 Enabled by default | Safe | Supports autocorrection | VersionAdded | VersionChanged | Required Solidus Version
 --- | --- | --- | --- | --- | ---
-Enabled | Yes | No | <<next>> | - | 2.2
+Enabled | Yes | No | 0.3 | - | 2.2
 
 This cop finds .tax_category occurrences and suggest using .tax_categories instead.
 

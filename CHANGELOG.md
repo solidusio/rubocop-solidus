@@ -1,9 +1,12 @@
 ## main (unreleased)
 
+## 0.3.0 (2024-03-05)
+
 ### New features
 
 * [#25](https://github.com/solidusio/rubocop-solidus/issues/25): Add solidus/tax_category_deprecated warning cop. ([@safafa][])
 * [#31](https://github.com/solidusio/rubocop-solidus/issues/31): Add discounted amount deprecated warning cop. ([@safafa][])
+* [#61](https://github.com/solidusio/rubocop-solidus/issues/61): Create new cop to check default_address and default_user_address. ([@the-krg][])
 
 ### Bug fixes
 

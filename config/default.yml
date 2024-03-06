@@ -17,7 +17,7 @@ Solidus/ClassEvalDecorator:
 Solidus/DiscountedAmountDeprecated:
   Description: 'Checks if .discounted_amount is being used and suggest using .total_before_tax instead.'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.3'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/31'
 
 Solidus/ExistingCardIdDeprecated:
@@ -49,6 +49,12 @@ Solidus/SpreeCalculatorPriceSackDeprecated:
   Enabled: true
   VersionAdded: '0.1'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/29'
+
+Solidus/SpreeDefaultAddressDeprecated:
+  Description: 'Checks if user.default_address or user.default_user_address is used and suggest using user.ship_address or user.default_user_ship_address'
+  Enabled: true
+  VersionAdded: '0.3'
+  Reference: 'https://github.com/solidusio/rubocop-solidus/issues/61'
 
 Solidus/SpreeDefaultCreditCardDeprecated:
   Description: 'Checks if user.default_credit_card is used and suggest using user.wallet.default_wallet_payment_source'
@@ -83,5 +89,5 @@ Solidus/SpreeTDeprecated:
 Solidus/TaxCategoryDeprecated:
   Description: 'Checks if tax_category is being used and issue a warning'
   Enabled: true
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.3'
   Reference: 'https://github.com/solidusio/rubocop-solidus/issues/25'
